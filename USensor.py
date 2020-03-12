@@ -1,6 +1,6 @@
 from ev3dev.ev3 import *
 
-class Sensor:
+class USensor:
     def __init__(self):
         self.us = UltrasonicSensor() # Ultra sonic sensor
         self.us.mode = 'US-DIST-CM'

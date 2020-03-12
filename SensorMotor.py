@@ -6,7 +6,7 @@ class SensorMotor:
         self.motor = Motor(adress)
         self.reset_position()
 
-    def turn_left(self, angle=None, dc=60):
+    def turn_left(self, angle=None, dc=45):
         """docstring for turn_right"""
         m = self.motor
 
@@ -15,7 +15,7 @@ class SensorMotor:
             turns = (angle/360.0) * turns_per_spin
 
             m.duty_cycle_sp = dc
-            m.position_sp = turns*360
+            m.position_sp = turns*360.0
             m.run_to_rel_pos()
             dc = -dc
             turns = -turns
@@ -25,7 +25,7 @@ class SensorMotor:
             m.run_direct()
             dc = -dc
 
-    def turn_right(self, angle=None, dc=60):
+    def turn_right(self, angle=None, dc=45):
         if angle != None: angle = -angle
         self.turn_left(angle, -dc)
 
