@@ -4,7 +4,7 @@ PI = 3.141592653589793
 
 class RobotMotor(object):
     """docstring for Motor"""
-    def __init__(self, diam, width, r_address=OUTPUT_A, l_address=OUTPUT_B):
+    def __init__(self, diam, width, r_address=OUTPUT_A, l_address=OUTPUT_D):
         super(RobotMotor, self).__init__()
         self.diam = diam
         self.width = width
