@@ -23,7 +23,7 @@ class SensorMotor:
         else:
             m.duty_cycle_sp = dc
             m.run_direct()
-            dc = -dc
+            dc =180-dc
 
     def turn_right(self, angle=None, dc=45):
         if angle != None: angle = -angle
