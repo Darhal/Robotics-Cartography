@@ -69,8 +69,8 @@ class RobotMotor(object):
                 m.duty_cycle_sp = dc # set duty cycle
                 m.position_sp = turns*360 # set new position in terms of turns
                 m.run_to_rel_pos() # run motor till it reach that position
-                dc = -dc # negate dc
-                turns = -turns # negate turns
+                dc = -dc # negate dc so that the other motor turns in the opposite direction
+                turns = -turns # negate turns so that the other motor turns in the opposite direction
             while 'running' in self.motors[0].state: sleep(0.01) # while motors are still turning then wait
         else:
             for m in self.motors: # for all motors

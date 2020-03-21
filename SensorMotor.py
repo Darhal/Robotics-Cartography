@@ -28,8 +28,6 @@ class SensorMotor:
             m.duty_cycle_sp = dc # set the duty cycle
             m.position_sp = turns*360.0 # set position in terms of turns
             m.run_to_rel_pos() # run till reach position
-            dc = -dc # negate duty cycle
-            turns = -turns # negate the turns
             while 'running' in m.state: sleep(0.01) # while still running wait
         else:
             m.duty_cycle_sp = dc # set duty cycle
