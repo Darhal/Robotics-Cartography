@@ -34,7 +34,7 @@ class Robot:
         self.posx = 0 # Set position X to 0
         self.posy = 0 # Set position Y to 0
         self.img = Image("explore.png", 1028, 1028) # Create the result image thats gonna be filled during exploring
-        self.sensor_dir = 1 # Iniltize the sensor to look front
+        self.sensor_dir = 1 # Sensor state either (0:left, 1:middle, 2:right), iniltized to look front
         self.obstacles = [] # Array of arrays containing obstacles
 
 
@@ -96,7 +96,7 @@ class Robot:
             self.sensor_motor.turn_left(None) # rotate the motor to the left
             # print("* Turning sensor to the left") # debug message
         
-        # Increment and do modulo 3 to no go out of our 3 states
+        # Increment and do modulo 3 to no go out of our 3 states (left, middle, right)
         self.sensor_dir =  (self.sensor_dir + 1) % 3 
 
     """
